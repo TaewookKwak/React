@@ -48,31 +48,15 @@
       const [flipped, setFlip] = React.useState(true);
       const onChange = event => setAmount(event.target.value);
       const onFlip = () => setFlip(current => !current);
-      const reset = () => setAmount(0);
       return (
         <div>
           <label htmlFor="km">Km</label>
-          <input
-            type="number"
-            placeholder="Km"
-            id="km"
-            value={flipped ? amount : amount * 1.609}
-            onChange={onChange}
-            disabled={!flipped}
-          />
-          <br />
+          <input type="number" placeholder="Km" id="km" />
           <label htmlFor="">Miles</label>
-          <input
-            type="number"
-            placeholder="Miles"
-            id="miles"
-            value={flipped ? amount / 1.609 : amount}
-            onChange={onChange}
-            disabled={flipped}
-          />
+          <input type="number" placeholder="Miles" id="miles" />
           <br />
-          <button onClick={reset}>Reset</button>
-          <button onClick={onFlip}>{flipped ? "Invert" : "Turn back"}</button>
+          <button onChange={onChange}>Reset</button>
+          <button>{flipped ? "Invert" : "Turn back"}</button>
         </div>
       );
     }

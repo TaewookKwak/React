@@ -56,9 +56,8 @@
             type="number"
             placeholder="Km"
             id="km"
-            value={flipped ? amount : amount * 1.609}
+            value={amount}
             onChange={onChange}
-            disabled={!flipped}
           />
           <br />
           <label htmlFor="">Miles</label>
@@ -66,13 +65,12 @@
             type="number"
             placeholder="Miles"
             id="miles"
-            value={flipped ? amount / 1.609 : amount}
+            value={amount / 1.609}
             onChange={onChange}
-            disabled={flipped}
           />
           <br />
           <button onClick={reset}>Reset</button>
-          <button onClick={onFlip}>{flipped ? "Invert" : "Turn back"}</button>
+          <button>{flipped ? "Invert" : "Turn back"}</button>
         </div>
       );
     }
